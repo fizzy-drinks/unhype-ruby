@@ -1,3 +1,6 @@
+require "active_support/core_ext/integer/time"
+require "active_support/isolated_execution_state"
+
 tasklists {
   before { authorize! }
 
@@ -58,7 +61,13 @@ tasks {
   get {
     app.models.tasklists.where(user_id: current_user.id)
       .flat_map { |tasklist|
-        app.models.tasks.where(tasklist_id: tasklist[:id])
+        app.db.send(:db)["tasks"]
+          .find({
+            :tasklist_id => tasklist[:id],
+            :deleted_at => nil,
+            "$or" => [{closed_at: nil}, {date_due: {"$gt" => DateTime.now - 1.week}}]
+          })
+          .to_a
       }
   }
 }

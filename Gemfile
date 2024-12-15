@@ -13,3 +13,5 @@ group :development do
   gem "standard", "~> 1.43"
   gem "pry", "~> 0.15.0"
 end
+
+gem "activesupport", "~> 8.0"
