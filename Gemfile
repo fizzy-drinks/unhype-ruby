@@ -8,6 +8,7 @@ gem "dotenv", "~> 3.1"
 gem "scrypt", "~> 3.0"
 
 group :development do
+  gem "star_adapter_json", git: "https://github.com/fizzy-drinks/star-ruby", branch: "main"
   gem "ruby-lsp", "~> 0.22.1"
   gem "standard", "~> 1.43"
   gem "pry", "~> 0.15.0"

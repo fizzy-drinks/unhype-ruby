@@ -3,6 +3,7 @@ GIT
   revision: 6f6de1557635acce502f76633ec2b8e2cbb341de
   branch: main
   specs:
+    star_adapter_json (0.1.0)
     star_adapter_mongodb (0.1.0)
       mongo (~> 2.21)
     star_server (0.1.0)
@@ -93,6 +94,7 @@ DEPENDENCIES
   ruby-lsp (~> 0.22.1)
   scrypt (~> 3.0)
   standard (~> 1.43)
+  star_adapter_json!
   star_adapter_mongodb!
   star_server!
 
