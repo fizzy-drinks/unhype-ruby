@@ -4,13 +4,17 @@ require "securerandom"
 require "base64"
 require "dotenv/load"
 require "scrypt"
-require "star_adapter_mongodb"
-require "star_adapter_json"
 
 app unhype
 
-db Star::DatabaseAdapter::MongoDB if ENV["ENV"] == "production"
-db Star::DatabaseAdapter::Json if ENV["ENV"] == "development"
+case ENV["ENV"]
+when "production"
+  require "star_adapter_mongodb"
+  db Star::DatabaseAdapter::MongoDB
+else
+  require "star_adapter_json"
+  db Star::DatabaseAdapter::Json
+end
 
 Star.load self, "models/users"
 Star.load self, "models/tokens"
