@@ -1,0 +1,8 @@
+app = "unhype-ruby"
+primary_region = "gru"
+
+[http_service]
+auto_start_machines = true
+auto_stop_machines = true
+force_https = true
+internal_port = 3000
