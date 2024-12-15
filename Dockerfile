@@ -4,7 +4,7 @@ RUN apt-get install git
 
 COPY . .
 
-RUN bundle install
+RUN bundle install --without development
 
 EXPOSE 3000
 
