@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fizzy-drinks/star-ruby
-  revision: 6f6de1557635acce502f76633ec2b8e2cbb341de
+  revision: 9f1b0055d51715433f16c318e3745006c39868c5
   branch: main
   specs:
     star_adapter_json (0.1.0)
