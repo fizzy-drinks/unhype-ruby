@@ -48,6 +48,6 @@ tasklists {
 
     delete { current_tasklist.delete! }
 
-    Star.load self, 'tasklists/tasks'
+    Star.load self, "tasklists/tasks"
   }
 }

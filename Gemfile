@@ -7,6 +7,8 @@ gem "base64", "~> 0.2.0"
 gem "dotenv", "~> 3.1"
 gem "scrypt", "~> 3.0"
 
-gem "ruby-lsp", "~> 0.22.1", :group => :development
-gem "standard", "~> 1.43", :group => :development
-gem "pry", "~> 0.15.0", :group => :development
+group :development do
+  gem "ruby-lsp", "~> 0.22.1"
+  gem "standard", "~> 1.43"
+  gem "pry", "~> 0.15.0"
+end

@@ -10,14 +10,14 @@ app unhype
 
 db Star::DatabaseAdapter::MongoDB
 
-Star.load self, 'models/users'
-Star.load self, 'models/tokens'
-Star.load self, 'models/tasklists'
-Star.load self, 'models/tasks'
+Star.load self, "models/users"
+Star.load self, "models/tokens"
+Star.load self, "models/tasklists"
+Star.load self, "models/tasks"
 
 router {
-  Star.load self, 'routes/prelude'
-  Star.load self, 'routes/tokens'
-  Star.load self, 'routes/users'
-  Star.load self, 'routes/tasklists'
+  Star.load self, "routes/prelude"
+  Star.load self, "routes/tokens"
+  Star.load self, "routes/users"
+  Star.load self, "routes/tasklists"
 }
