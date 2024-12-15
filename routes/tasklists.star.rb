@@ -51,3 +51,14 @@ tasklists {
     Star.load self, "tasklists/tasks"
   }
 }
+
+tasks {
+  before { authorize! }
+
+  get {
+    app.models.tasklists.where(user_id: current_user.id)
+      .flat_map { |tasklist|
+        app.models.tasks.where(tasklist_id: tasklist[:id])
+      }
+  }
+}
